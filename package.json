@@ -1,0 +1,17 @@
+{
+  "name": "angular1-tracker",
+  "version": "1.0.0",
+  "description": "A breakable toy for learning angular.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Martin",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
+    "lodash": "^4.5.1"
+  }
+}
