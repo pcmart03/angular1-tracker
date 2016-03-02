@@ -1,0 +1,1 @@
+var nutritionApp = angular.module('nutritionApp', ['ngResource']);
