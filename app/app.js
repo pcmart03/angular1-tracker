@@ -1,1 +1,4 @@
-var nutritionApp = angular.module('nutritionApp', ['ngResource']);
+(function(){
+    'use strict';
+    var nutritionApp = angular.module('nutritionApp', []);
+})();

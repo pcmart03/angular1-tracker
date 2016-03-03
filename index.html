@@ -6,15 +6,29 @@
    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body ng-cloak>
-    <div class="container" ng-controller="FoodLogController">
+    <div class="container">
         <header>
             <h1 class="text-center">Nutrition App</h1>
             <hr>
         </header>
-        <div class="row">
+        <div class="row" ng-controller="FoodLogController">
             <div class="col-md-6">
                 <ul>
                   <li ng-repeat="food in foodsEaten.foods">{{ food.name }} {{ food.calories | number:2 }} kcal</li>  
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row" ng-controller="SearchController">
+            <div class="col-md-6">
+                <ng-form class="form-group">
+                    <input type="text" class="form-control"><br>
+                    <button class="btn btn-default pull-right">Submit</button>
+                </ng-form>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    
                 </ul>
             </div>
         </div>
@@ -24,8 +38,11 @@
     <script src="/node_modules/lodash/lodash.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/node_modules/angular/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/services/constants.js"></script>
+    <script src="/app/services/search-url-service.js"></script>
+    <script src="/app/services/search-service.js"></script>
     <script src="/app/controllers/food-log.js"></script>
+    <script src="/app/controllers/food-search.js"></script>
 </body>
 </html>

@@ -1,2 +1,2 @@
 node_modules
-app/constants.js
+app/services/constants.js

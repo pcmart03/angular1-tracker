@@ -1,4 +1,5 @@
-nutritionApp.controller('FoodLogController', ['$scope', function($scope){
+angular.
+    module('nutritionApp').controller('FoodLogController', ['$scope', function($scope){
     $scope.foodsEaten = {
         foods: [
             {
