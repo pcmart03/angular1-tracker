@@ -9,19 +9,19 @@
     SearchService.$inject = ['$http', '$log','SearchUrlService'];
     function SearchService($http, $log, SearchUrlService) {
         var service = {
-            exposedFn:exposedFn
+            searchRequest:searchRequest
         };
         
         return service;
 
         ////////////////
         function searchRequest(searchTerm) { 
-          return $http(SearchURLService.SearchURL(searchTerm))
+          return $http.get(SearchUrlService.searchURL(searchTerm))
           .then(searchComplete)
           .catch(searchFailed);
           
           function searchComplete(response){
-              $log(response);
+              return response.data.hits;
           }
           
           function searchFailed(error){
