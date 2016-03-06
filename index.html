@@ -9,17 +9,9 @@
     <div class="container">
         <header>
             <h1 class="text-center">Nutrition App</h1>
+            <a ui-sref="search">Search</a>
             <hr>
         </header>
-        <div class="row" ng-controller="FoodLogController">
-            <div class="col-md-6">
-                <ul>
-                  <li ng-repeat="food in foodsEaten.foods">{{ food.name }} {{ food.calories | number:2 }} kcal</li>  
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <a ui-sref="search">Search</a>
        <div ui-view></div>   
     </div>
 
@@ -36,6 +28,7 @@
     <script src="/app/controllers/food-log.js"></script>
     <script src="/app/controllers/search.js"></script>
     <script src="/app/controllers/results.js"></script>
+    <script src="/app/routes/main.routes.js"></script>
     <script src="/app/routes/search.routes.js"></script>
 </body>
 </html>

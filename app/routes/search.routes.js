@@ -1,4 +1,6 @@
-angular
+(function(){
+    "use strict";
+    angular
     .module('nutritionApp')
     .run(appRun);
 
@@ -29,3 +31,4 @@ function getStates() {
         }
     ];
 }
+})();
