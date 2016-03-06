@@ -1,0 +1,19 @@
+{
+  "name": "angular1-tracker",
+  "description": "A breakable toy for learning angular.",
+  "main": "index.js",
+  "authors": [
+    "Patrick Martin"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

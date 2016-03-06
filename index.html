@@ -19,30 +19,22 @@
             </div>
         </div>
         <hr>
-        <div class="row" ng-controller="SearchController as search">
-            <div class="col-md-6">
-                <form class="form-group">
-                    <input type="text" class="form-control" ng-model="searchTerm"><br>
-                    <button class="btn btn-default pull-right" ng-click="search.searchFoods(searchTerm)">Submit</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li ng-repeat="result in search.results">{{result.fields.item_name}}</li>
-                </ul>
-            </div>
-        </div>
+        <a ui-sref="search">Search</a>
+       <div ui-view></div>   
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/node_modules/lodash/lodash.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/lib/angular-ui-router.min.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/routes/routerHelperProvider.js"></script>
     <script src="/app/services/constants.js"></script>
     <script src="/app/services/search-url-service.js"></script>
     <script src="/app/services/search-service.js"></script>
     <script src="/app/controllers/food-log.js"></script>
     <script src="/app/controllers/food-search.js"></script>
+    <script src="/app/routes/search.routes.js"></script>
 </body>
 </html>
