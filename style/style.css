@@ -11,3 +11,8 @@ body {
 a {
     color: #fcfcfc;
 }
+
+h1 a {
+   color: #fcfcfc;
+   text-decoration: none; 
+}

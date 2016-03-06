@@ -31,8 +31,7 @@
         activate();
         
         function activate(){
-            console.log(vm.foodsEaten)
-            return vm.foodsEaten
+            return vm.foodsEaten;
         }
     }
 })();
