@@ -13,7 +13,18 @@ function getStates() {
             state: 'search',
             config: {
                 templateUrl: '/app/templates/searchTemplate.html',
-                url: '/search'
+                url: '/search',
+                controller: 'SearchController',
+                controllerAs: "search"
+            }
+        },
+        {
+            state: 'search.results',
+            config: {
+                url: '/:search_term',
+                templateUrl: '/app/templates/resultsTemplate.html',
+                controller: "ResultsController",
+                controllerAs: "results"
             }
         }
     ];

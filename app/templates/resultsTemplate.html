@@ -1,0 +1,6 @@
+    <div class="row">
+        <div class="col-md-6">
+           <ul class="list-unstyled">
+               <li ng-repeat="result in results.hits"><strong>{{result.fields.item_name}}</strong>, {{ result.fields.brand_name}} <span class="pull-right">{{result.fields.nf_calories}}</span></li>
+           </ul>
+        </div>

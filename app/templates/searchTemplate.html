@@ -1,4 +1,4 @@
-<div ng-controller="SearchController as search">           
+<div>           
     <div class="row">
          <div class="col-md-6">
             <form class="form-group">
@@ -7,11 +7,5 @@
             </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-           <ul class="list-unstyled">
-               <li ng-repeat="result in search.results"><strong>{{result.fields.item_name}}</strong>, {{ result.fields.brand_name}} <span class="pull-right">{{result.fields.nf_calories}}</span></li>
-           </ul>
-        </div>
-    </div>
+    <div ui-view></div>
 </div>
