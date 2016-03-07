@@ -19,16 +19,25 @@
         function genericURLBuilder(requestType,requestTerm) { 
             var i,
                 fieldsLength = config.nFields.length, url = config.nBaseURL + requestType + '/';
-            url += requestTerm; 
-            url += '?results=0:' + config.resultCount;
-            url += '&fields=';
-            for (i=0; i<fieldsLength; i++){
-                if(i<fieldsLength-1){
-                    url += config.nFields[i] + ',';
-                } else {
-                    url += config.nFields[i];
-                }
+            // items are retrieved by nutrionix id.
+            if (requestType === 'item') {
+                url += '?id=';
             }
+            
+            url += requestTerm;
+            // add results and required fields for search.
+            if (requestType=== 'search') {
+                url += '?results=0:' + config.resultCount;
+                url += '&fields=';
+                for (i=0; i<fieldsLength; i++){
+                    if(i<fieldsLength-1){
+                        url += config.nFields[i] + ',';
+                    } else {
+                        url += config.nFields[i];
+                    }
+                } //end for
+            } //end if
+            
             url += '&appId=' + config.nAppID;
             url += '&appKey=' + config.nAppKey;
             

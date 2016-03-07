@@ -15,7 +15,7 @@
         ////////////////
 
         function searchFoods(searchTerm) { 
-           $state.go('search.results', {search_term: searchTerm} )
+           $state.go('search.results', {search_term: searchTerm});
         }
     }
 })();
