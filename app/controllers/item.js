@@ -10,7 +10,7 @@
         var vm = this;
         vm.getItem = getItem;
         vm.updateServings = updateServings;
-        
+        vm.calculateCalories = calculateCalories;
         activate();
 
         ////////////////
@@ -23,12 +23,18 @@
             return ItemGetter.getItem(itemID)
                 .then(function(data){
                   vm.fields = data;
+                  vm.calculateCalories();
                   return vm.fields; 
                 });
         }
         
         function updateServings(value){
             vm.fields.servings = value;
+            vm.calculateCalories();
+        }
+        
+        function calculateCalories(){
+            vm.fields.totalCalories = vm.fields.servings * vm.fields.calories;
         }
     }
 })();
