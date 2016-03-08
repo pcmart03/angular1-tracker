@@ -1,6 +1,11 @@
     <div class="row">
         <div class="col-md-6">
            <ul class="list-unstyled">
-               <li ng-repeat="result in results.hits"><a ui-sref="item({ item_id: '{{result.fields.item_id}}' })"><strong>{{result.fields.item_name}}</strong>, {{ result.fields.brand_name}} <span class="pull-right">{{result.fields.nf_calories}}</span></a></li>
+               <li ng-repeat="result in results.hits">
+                   <a ui-sref="item({ item_id: '{{result.fields.item_id}}' })">
+                        <strong>{{result.fields.item_name}}</strong>, {{ result.fields.brand_name}} 
+                        <span class="pull-right">{{result.fields.nf_calories}}</span>
+                   </a>
+               </li>
            </ul>
         </div>

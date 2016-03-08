@@ -5,12 +5,13 @@
         .module('nutritionApp')
         .controller('ItemController', ItemController);
 
-    ItemController.$inject = ['ItemGetter', '$state', '$stateParams', '$log'];
-    function ItemController(ItemGetter, $state, $stateParam, $log) {
+    ItemController.$inject = ['ItemGetter', '$state', '$stateParams', '$log', 'FirebaseData'];
+    function ItemController(ItemGetter, $state, $stateParam, $log, FirebaseData) {
         var vm = this;
         vm.getItem = getItem;
         vm.updateServings = updateServings;
         vm.calculateCalories = calculateCalories;
+        vm.saveFood = saveFood;
         activate();
 
         ////////////////
@@ -24,6 +25,7 @@
                 .then(function(data){
                   vm.fields = data;
                   vm.calculateCalories();
+                  
                   return vm.fields; 
                 });
         }
@@ -35,6 +37,12 @@
         
         function calculateCalories(){
             vm.fields.totalCalories = vm.fields.servings * vm.fields.calories;
+        }
+        
+        function saveFood(){
+            vm.fields.date = Date.now();
+            FirebaseData.saveData(vm.fields);
+            $state.go('index');
         }
     }
 })();

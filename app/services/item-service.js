@@ -25,7 +25,7 @@
              var fields = {
                  item_id: rFields.item_id,
                  item_name: rFields.item_name,
-                 brand_name: rFields.Brand_name,
+                 brand_name: rFields.brand_name,
                  calories: rFields.nf_calories,
                  serving_size_qty: rFields.nf_serving_size_qty,
                  serving_units: rFields.nf_serving_size_unit,
