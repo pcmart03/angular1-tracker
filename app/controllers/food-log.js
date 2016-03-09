@@ -5,33 +5,21 @@
         .module("nutritionApp")
         .controller('FoodLogController', FoodLogController);
 
-    FoodLogController.$inject = [];
-    function FoodLogController(){
+    FoodLogController.$inject = ['FirebaseData', '$log'];
+    function FoodLogController(FirebaseData, $log){
         var vm = this;
-        vm.foodsEaten = [
-                {
-                    name: "Tacos",
-                    calories: 400
-                },
-                {
-                    name: "hot dogs",
-                    calories: 120.5
-                },
-                {
-                    name: "Pie",
-                    calories: 700
-                },
-                {
-                    name: "apple",
-                    calories: 87.3
-                }
-        ]; 
-        
+        vm.foodsEaten = FirebaseData.savedArray(); 
+        vm.deleteFood = deleteFood;
         ///////////////
         activate();
         
         function activate(){
+            $log.log(vm.foodsEaten)
             return vm.foodsEaten;
+        }
+        
+        function deleteFood(food){
+            FirebaseData.deleteRecord(food);
         }
     }
 })();

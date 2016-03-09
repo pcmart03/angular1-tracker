@@ -1,7 +1,34 @@
 <div class="row">
     <div class="col-md-6">
-        <ul>
-            <li ng-repeat="food in foods.foodsEaten">{{ food.name }} {{ food.calories | number:2 }} kcal</li>  
-        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Brand</th>
+                    <th>Servings</th>
+                    <th>Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in foods.foodsEaten">
+                    <td>
+                        {{ item.item_name }}
+                    </td>
+                    <td>
+                        {{ item.brand_name }}
+                    </td>
+                    <td>
+                        <span>{{ item.servings }}<span>
+                        <span></span>
+                    </td>
+                    <td>
+                        {{ item.totalCalories }}
+                        <a href="#" class="btn btn-danger pull-right" ng-click="foods.deleteFood(item)">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
      </div>
 </div>

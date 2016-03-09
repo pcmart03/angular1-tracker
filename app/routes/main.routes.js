@@ -15,7 +15,7 @@ function getStates() {
             state: 'index',
             config: {
                 templateUrl: '/app/templates/home.html',
-                url: '',
+                url: '/dashboard',
                 controller: 'FoodLogController',
                 controllerAs: "foods"
             }
