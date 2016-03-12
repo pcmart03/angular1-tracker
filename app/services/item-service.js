@@ -5,8 +5,8 @@
         .module('nutritionApp')
         .factory('ItemGetter', ItemGetter);
 
-    ItemGetter.$inject = ['$http', '$log', 'SearchUrlService'];
-    function ItemGetter($http, $log, SearchUrlService) {
+    ItemGetter.$inject = ['$http', '$log', 'SearchUrlService', 'DateService'];
+    function ItemGetter($http, $log, SearchUrlService, DateService) {
         var services = {
             getItem:getItem
         };
@@ -27,7 +27,7 @@
                  item_name: rFields.item_name,
                  brand_name: rFields.brand_name,
                  calories: rFields.nf_calories,
-                 date: setDate(),
+                 date: DateService.setTodaysDate(),
                  serving_size_qty: rFields.nf_serving_size_qty,
                  serving_units: rFields.nf_serving_size_unit,
                  servings: 1
@@ -39,9 +39,6 @@
              $log("failed to retrieve item: " + error);
          }
          
-         function setDate(){
-             var date = new Date();
-             return date.toLocaleDateString();
-         }
+
     }
 })();

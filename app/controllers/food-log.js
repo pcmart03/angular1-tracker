@@ -5,8 +5,8 @@
         .module("nutritionApp")
         .controller('FoodLogController', FoodLogController);
 
-    FoodLogController.$inject = ['FirebaseData', '$log'];
-    function FoodLogController(FirebaseData, $log){
+    FoodLogController.$inject = ['FirebaseData', 'DateService', '$state', '$stateParams', '$log'];
+    function FoodLogController(FirebaseData, DateService, $state, $stateParams, $log){
         var vm = this;
         vm.foodsEaten = FirebaseData.savedArray();  
        
@@ -16,12 +16,16 @@
         vm.editServings = editServings;
         vm.exitItem = exitItem;
         vm.updateFood = updateFood;
+        vm.setTodaysDate = setTodaysDate;
        
         ///////////////
         activate();
         
         function activate(){
-            return vm.foodsEaten;
+            if ($stateParams.view_date){
+                vm.viewDate = $stateParams.view_date;
+            }
+            vm.setTodaysDate();
         }
         
         function deleteFood(food){
@@ -56,6 +60,11 @@
             if (item.editMode) {
                 toggleMode(item);
             }
+        }
+       
+       function setTodaysDate(){
+            vm.viewDate = DateService.setTodaysDate();
+            $log.log(vm.viewDate);
         }
     }
 })();

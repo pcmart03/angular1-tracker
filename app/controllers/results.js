@@ -5,17 +5,17 @@
         .module('nutritionApp')
         .controller('ResultsController', ResultsController);
 
-    ResultsController.$inject = ['SearchService', '$state', '$stateParams'];
-    function ResultsController(SearchService, $state, $stateParams) {
+    ResultsController.$inject = ['SearchService', '$state', '$stateParams', 'DateService'];
+    function ResultsController(SearchService, $state, $stateParams, DateService) {
         var vm = this;
         vm.getHits = getHits;
-
+        
         activate();
 
         ////////////////
 
         function activate() {
-            return vm.getHits($stateParams.search_term);
+            vm.getHits($stateParams.search_term);
          }
         
         function getHits(searchTerm) {
@@ -27,7 +27,7 @@
             } else {
                 vm.hits = "";
             }
-            return vm.hits;
+            
         }
-    }
+    }      
 })();
