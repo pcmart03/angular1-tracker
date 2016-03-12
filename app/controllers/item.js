@@ -36,11 +36,12 @@
         }
         
         function calculateCalories(){
-            vm.fields.totalCalories = vm.fields.servings * vm.fields.calories;
+            vm.fields.total_calories = vm.fields.servings * vm.fields.calories;
         }
         
         function saveFood(){
             vm.fields.date = Date.now();
+            vm.editMode = true;
             FirebaseData.saveData(vm.fields);
             $state.go('index');
         }

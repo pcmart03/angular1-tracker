@@ -1,8 +1,9 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <table class="table">
             <thead>
                 <tr>
+                    <th>Date</th>
                     <th>Food</th>
                     <th>Brand</th>
                     <th>Servings</th>
@@ -12,19 +13,23 @@
             <tbody>
                 <tr ng-repeat="item in foods.foodsEaten">
                     <td>
+                        {{ item.date | date : 'short' }}
+                    </td>
+                    <td>
                         {{ item.item_name }}
                     </td>
                     <td>
                         {{ item.brand_name }}
                     </td>
                     <td>
-                        <span>{{ item.servings }}<span>
-                        <span></span>
+                        <label ng-hide="item.editMode" ng-dblclick="foods.editServings(item)">{{ item.servings }}</label>
+                       <input type="text" ng-show="item.editMode" ng-model="item.servings" ng-keyup="foods.updateFood(item, $event)" focus-show>
                     </td>
                     <td>
-                        {{ item.totalCalories }}
+                        {{ item.total_calories }}
                         <a href="#" class="btn btn-danger pull-right" ng-click="foods.deleteFood(item)">
                             <i class="fa fa-trash"></i>
+                        </a>
                         </a>
                     </td>
                 </tr>

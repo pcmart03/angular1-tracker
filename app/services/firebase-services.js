@@ -12,7 +12,8 @@
         var service = {
             savedArray:savedArray,
             saveData:saveData,
-            deleteRecord:deleteRecord
+            deleteRecord:deleteRecord,
+            updateRecord:updateRecord
         };
         
         return service;
@@ -28,6 +29,10 @@
          
          function deleteRecord(item){
              fbArray.$remove(item);
+         }
+         
+         function updateRecord(item){
+             fbArray.$save(item);
          }
     }
 })();
