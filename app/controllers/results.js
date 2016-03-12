@@ -19,11 +19,15 @@
          }
         
         function getHits(searchTerm) {
-            return SearchService.searchRequest(searchTerm)
-            .then(function(data){
-                 vm.hits = data;
-                return vm.hits;
-            });
+            if(searchTerm) {
+                return SearchService.searchRequest(searchTerm)
+                .then(function(data){
+                    vm.hits = data;
+                });
+            } else {
+                vm.hits = "";
+            }
+            return vm.hits;
         }
     }
 })();
