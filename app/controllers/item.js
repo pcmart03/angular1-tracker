@@ -40,7 +40,6 @@
         }
         
         function saveFood(){
-            vm.fields.date = Date.now();
             vm.editMode = true;
             FirebaseData.saveData(vm.fields);
             $state.go('index');

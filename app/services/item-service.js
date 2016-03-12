@@ -27,6 +27,7 @@
                  item_name: rFields.item_name,
                  brand_name: rFields.brand_name,
                  calories: rFields.nf_calories,
+                 date: setDate(),
                  serving_size_qty: rFields.nf_serving_size_qty,
                  serving_units: rFields.nf_serving_size_unit,
                  servings: 1
@@ -36,6 +37,11 @@
          
          function requestFailed(error){
              $log("failed to retrieve item: " + error);
+         }
+         
+         function setDate(){
+             var date = new Date();
+             return date.toLocaleDateString();
          }
     }
 })();
