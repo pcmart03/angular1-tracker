@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-9">
-        <p>Showing foods for: <input type="text" date-picker ng-model="foods.viewDate" ng-change="foods.sumCalories()"> {{ foods.calorieTotal }}</p>
+        <p>Showing foods for: <input type="text" date-picker ng-model="foods.viewDate" ng-change="foods.sumCalories()"></p>
         <table class="table">
             <thead>
                 <tr>
@@ -31,10 +31,18 @@
                         <a href="#" class="btn btn-danger pull-right" ng-click="foods.deleteFood(item)">
                             <i class="fa fa-trash"></i>
                         </a>
-                        </a>
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{ foods.calorieTotal | number:0 }}</td>
+                </tr>
+            </tfoot>
         </table>
      </div>
 </div>
