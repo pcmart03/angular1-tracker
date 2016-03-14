@@ -20,6 +20,7 @@ function getStates() {
                 controllerAs: "foods"
             }
         },
+        
     ];
 }
 })();

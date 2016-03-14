@@ -17,15 +17,14 @@
         vm.exitItem = exitItem;
         vm.updateFood = updateFood;
         vm.setTodaysDate = setTodaysDate;
+        vm.sumCalories = sumCalories;
        
         ///////////////
         activate();
         
         function activate(){
-            if ($stateParams.view_date){
-                vm.viewDate = $stateParams.view_date;
-            }
             vm.setTodaysDate();
+            vm.sumCalories();
         }
         
         function deleteFood(food){
@@ -64,7 +63,19 @@
        
        function setTodaysDate(){
             vm.viewDate = DateService.setTodaysDate();
-            $log.log(vm.viewDate);
         }
+        
+      function sumCalories(){
+          var total = 0;
+          vm.foodsEaten.$loaded().then(function(foodsEaten){
+              for (var i = 0; i < vm.foodsEaten.length; i++) {
+                if (foodsEaten[i].date === vm.viewDate){
+                    total += foodsEaten[i].total_calories;
+              }
+          }
+          vm.calorieTotal = total;
+          })
+
+      }
     }
 })();
