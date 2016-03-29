@@ -44,5 +44,16 @@
                 </tr>
             </tfoot>
         </table>
+        <div class="flex-table">
+            <div class="flex-table-cell ft-header">Item</div>
+            <div class="flex-table-cell ft-header">Brand Name</div>
+            <div class="flex-table-cell ft-header">Servings</div>
+            <div class="flex-table-cell ft-header">Calories</div>
+
+            <div ng-repeat-start="food in foods.foodsEaten | orderBy: 'date':true | filter: {date: foods.viewDate}" class="flex-table-cell">{{ food.item_name }}</div>
+            <div class="flex-table-cell">{{ food.brand_name}}</div>
+            <div class="flex-table-cell">{{ food.servings}}</div>
+            <div ng-repeat-end class="flex-table-cell">{{ food.total_calories | number: 0 }}</div>
+        </div>
      </div>
 </div>

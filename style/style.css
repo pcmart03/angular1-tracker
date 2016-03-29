@@ -20,3 +20,34 @@ h1 a {
 input{
     color: black;
 }
+
+.flex-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-table-cell {
+    width: 24%;
+}
+
+.ft-header {
+    font-weight: bold;
+}
+
+@media all and (max-width: 500px){
+    .flex-table {
+        display: block;
+    }
+    
+    .flex-table div:nth-child(4n+4){
+        margin-bottom: 10px;
+    }
+    
+    .flex-table-cell {
+        width: 100%;
+    }
+    
+    .ft-header{
+        display: none;
+    }
+}
