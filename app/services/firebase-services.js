@@ -5,7 +5,7 @@
         .module('nutritionApp')
         .factory('FirebaseData', FirebaseData);
 
-    Firebase.$inject = ['config', '$firebaseArray'];
+    FirebaseData.$inject = ['config', '$firebaseArray'];
     function FirebaseData(config, $firebaseArray) {
         var fbArray = $firebaseArray(new Firebase(config.firebaseURL));
         

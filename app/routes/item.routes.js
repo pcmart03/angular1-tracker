@@ -4,7 +4,7 @@
         .module('nutritionApp')
         .run(appRun);
         
-        
+    appRun.$inject = ['routerHelper'];    
     function appRun(routerHelper){
         routerHelper.configureStates(getStates());
     }
