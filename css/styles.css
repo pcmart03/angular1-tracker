@@ -15,8 +15,164 @@ h6 {
   font-family: 'Josefin Slab', Georgia, serif;
 }
 a {
-  color: #4CDB4A;
+  color: #468913;
 }
 a:hover {
-  color: #2aca28;
+  color: #2f5c0d;
+}
+.app-view {
+  margin-top: 40px;
+}
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #468913;
+}
+header .brand {
+  margin: 0;
+  padding: 5px 10px;
+}
+header .brand a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.add-food-div {
+  text-align: right;
+}
+.button {
+  text-decoration: none;
+  color: #FFF;
+  background: #468913;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.control-box {
+  flex-grow: 1;
+}
+.date-input {
+  font-family: 'Josefin Slab', Georgia, serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #468913;
+  border: none;
+  border-bottom: 1px solid #595959;
+  width: 150px;
+  text-align: center;
+}
+.date-input:hover {
+  color: #74e022;
+  cursor: pointer;
+}
+.flex-table,
+.diary-controls {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
+}
+@media only screen and (max-device-width: 480px) {
+  .flex-table,
+  .diary-controls {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+.flex-table-cell,
+.first-column {
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed grey;
+}
+@media only screen and (max-device-width: 480px) {
+  .flex-table-cell,
+  .first-column {
+    width: 100%;
+    border-bottom: none;
+    text-align: left;
+    padding: 0 10px 0 10px;
+  }
+}
+.first-column {
+  text-align: left;
+}
+@media only screen and (max-device-width: 480px) {
+  .first-column {
+    background-color: #74e022;
+  }
+}
+.ft-header {
+  font-family: 'Josefin Slab', Georgia, serif;
+  font-weight: bold;
+  border-bottom: 1px solid #74e022;
+  text-align: center;
+}
+@media only screen and (max-device-width: 480px) {
+  .ft-header {
+    display: none;
+  }
+}
+.ui-widget {
+  font-family: 'Oswald', Verdana, sans-serif;
+  font-size: 0.8em;
+}
+.search-div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+@media only screen and (max-device-width: 480px) {
+  .search-div {
+    width: 100%;
+  }
+}
+.search-form input {
+  font-family: 'Josefin Slab', Georgia, serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #468913;
+  border: none;
+  border-bottom: 1px solid #595959;
+  width: 300px;
+  text-align: right;
+}
+.search-form input:focus {
+  outline: none;
+}
+.results-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+}
+@media only screen and (max-device-width: 480px) {
+  .results-list {
+    font-size: 1em;
+  }
+}
+.result-item a {
+  text-decoration: none;
+  color: #595959;
+}
+.result-item a:hover {
+  color: #595959;
+}
+.result-item span {
+  float: right;
+}
+@media only screen and (max-device-width: 480px) {
+  .result-item span {
+    font-size: 2em;
+    padding-right: 10px;
+  }
+}
+.result-item:hover {
+  background-color: #74e022;
 }

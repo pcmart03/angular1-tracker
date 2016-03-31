@@ -38,3 +38,5 @@ gulp.task('concat', function(){
     .pipe(uglify())
     .pipe(gulp.dest('./js'));
 });
+
+gulp.task('build', ['less', 'concat']);

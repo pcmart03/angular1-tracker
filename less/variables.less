@@ -1,5 +1,5 @@
 // Colors
-@brand-primary: #4CDB4A;
+@brand-primary: #468913;
 @primary-light: lighten(@brand-primary, 20%);
 @primary-hover: darken(@brand-primary, 10%);
 
@@ -12,3 +12,23 @@
 // Typography
 @light: 300;
 @normal: 400;
+
+// Break Points
+@phone: 480px;
+@tablet: 800px;
+
+// Mixins
+.radius-mixin() {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.input-mixin(){
+    font-family: @serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: @brand-primary;
+    border: none;
+    border-bottom: 1px solid @text-primary;
+}

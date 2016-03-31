@@ -1,0 +1,72 @@
+.add-food-div {
+    text-align: right;
+}
+.button {
+    text-decoration: none;
+    color: #FFF;
+    background: @brand-primary;
+    padding: 5px;
+    .radius-mixin();
+}
+
+.control-box {
+    flex-grow: 1;
+}
+
+.date-input {
+    .input-mixin();
+    width: 150px;
+    text-align: center;
+    
+    &:hover {
+        color: @primary-light;
+        cursor: pointer;
+    }
+}
+
+.flex-table, .diary-controls {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 20px auto;
+    @media only screen and (max-device-width: @phone) {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    } 
+}
+
+
+.flex-table-cell, .first-column {
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed grey;
+    
+    @media only screen and (max-device-width: @phone) {
+        width: 100%;
+        border-bottom: none;
+        text-align: left;
+        padding: 0 10px 0 10px;
+    } 
+}
+
+.first-column {
+    text-align: left;
+    @media only screen and (max-device-width: @phone) {
+        background-color: @primary-light;
+    } 
+}
+
+.ft-header {
+    font-family: @serif;
+    font-weight: bold;
+    border-bottom: 1px solid @primary-light;
+    text-align: center;
+    
+    @media only screen and (max-device-width: @phone) {
+        display: none;
+    } 
+}
