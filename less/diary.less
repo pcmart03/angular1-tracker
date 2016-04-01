@@ -1,16 +1,21 @@
 .add-food-div {
     text-align: right;
 }
-.button {
-    text-decoration: none;
-    color: #FFF;
-    background: @brand-primary;
-    padding: 5px;
-    .radius-mixin();
-}
+
 
 .control-box {
-    flex-grow: 1;
+    flex: 1 1 auto;
+}
+
+.diary-controls {
+    display: flex;
+    flex-flow: wrap nowrap;
+    width: 80%;
+    margin: 20px auto;
+    
+    @media only screen and (max-device-width: @phone){
+        width: 90%;
+    }
 }
 
 .date-input {
@@ -24,14 +29,14 @@
     }
 }
 
-.flex-table, .diary-controls {
+.flex-table {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     margin: 20px auto;
     @media only screen and (max-device-width: @phone) {
         width: 90%;
-        margin: 0 auto;
+        margin: 10px auto;
         display: block;
     } 
 }
@@ -45,6 +50,13 @@
     padding-bottom: 5px;
     border-bottom: 1px dashed grey;
     
+    input {
+        .input-mixin();
+        outline: none;
+        text-align: center;
+        width: 30%;
+    }
+    
     @media only screen and (max-device-width: @phone) {
         width: 100%;
         border-bottom: none;
@@ -56,8 +68,17 @@
 .first-column {
     text-align: left;
     @media only screen and (max-device-width: @phone) {
+        margin-top: 1em;
+        padding: 8px;
         background-color: @primary-light;
     } 
+}
+
+.calories-cell {
+    @media only screen and (max-device-width: @phone) {
+        border-bottom: 1px solid @text-primary;
+        padding-bottom: 5px;
+    }
 }
 
 .ft-header {

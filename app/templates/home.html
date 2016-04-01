@@ -1,10 +1,10 @@
 
 <div class="diary-controls">
     <div class="date-div control-box">
-        Showing foods for: <input type="text" date-picker ng-model="foods.viewDate" ng-change="foods.sumCalories()" class="date-input">
+        Date: <input type="text" date-picker ng-model="foods.viewDate" ng-change="foods.sumCalories()" class="date-input">
     </div>
     <div class="add-food-div control-box">
-        <a ui-sref="search" class="button">Add Food <i class="fa fa-plus-square"></i></a>
+        <a ui-sref="search" class="button button-success">Add Food</a>
     </div>
 </div>
 <div class="flex-table">
@@ -18,5 +18,7 @@
     <div class="flex-table-cell">
         <label ng-hide="food.editMode" ng-dblclick="foods.editServings(food)">{{ food.servings }}</label>
         <input type="text" ng-show="food.editMode" ng-model="food.servings" ng-keyup="foods.updateFood(food, $event)" focus-show></div>
-    <div ng-repeat-end class="flex-table-cell">{{ food.total_calories | number: 0 }}</div>
+    <div ng-repeat-end class="flex-table-cell calories-cell">
+        <span>{{ food.total_calories | number: 0 }} <a href="#" class="button button-delete f-right" ng-click="foods.deleteFood(food)"><i class="fa fa-trash"></i></a></span>
+    </div>
 </div>

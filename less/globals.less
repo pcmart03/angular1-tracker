@@ -5,7 +5,8 @@ body {
     font-family: @sans-serif;
     font-weight: @light;
     color: @text-primary;
-    font-size: 1.3em;
+    font-size: 21px;
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,4 +22,49 @@ a {
 
 .app-view {
     margin-top: 40px;
+}
+
+.button {
+    text-decoration: none;
+    color: #FFF;
+    .radius-mixin();
+    &:hover{
+        color: #FFF;
+    }
+}
+
+.button-success {
+    background: @brand-primary;
+    padding: 5px;
+    
+    &:hover {
+        background-color: @primary-light;
+    }
+}
+
+.button-delete {
+    background: @danger;
+    padding: 1px 10px 2px 10px;
+
+    &:hover {
+        background-color: @danger-light;
+    }
+}
+
+// helpers
+.f-right{
+    float: right;
+}
+
+.show-desktop {
+    @media only screen and (max-device-width: @phone) {
+        display: none;
+    }
+}
+
+.show-mobile {
+    display: none;
+    @media only screen and (max-device-width: @phone) {
+        display: inline-block;
+    }
 }

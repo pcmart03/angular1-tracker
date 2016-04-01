@@ -2,14 +2,14 @@
     "version": "0.1.0",
     "command": "gulp",
     "isShellCommand": true,
-    "args": [
-        "--no-color"
-    ],
+    "args": [],
     "tasks": [
         {
             "taskName": "build",
             "args": [],
             "isBuildCommand": true,
+            "problemMatcher": "$lessCompile",
+            "showOutput": "silent"
         }    
     ]
 }
