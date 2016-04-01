@@ -105,6 +105,9 @@ header .brand a {
   width: 150px;
   text-align: center;
 }
+.date-input:focus {
+  outline: none;
+}
 .date-input:hover {
   color: #74e022;
   cursor: pointer;
@@ -142,6 +145,10 @@ header .brand a {
   outline: none;
   text-align: center;
   width: 30%;
+}
+.flex-table-cell input:focus,
+.first-column input:focus {
+  outline: none;
 }
 @media only screen and (max-device-width: 600px) {
   .flex-table-cell,
@@ -206,6 +213,9 @@ header .brand a {
 .search-form input:focus {
   outline: none;
 }
+.search-form input:focus {
+  outline: none;
+}
 @media only screen and (max-device-width: 600px) {
   .search-form input {
     width: 300px;
@@ -240,4 +250,38 @@ header .brand a {
 }
 .result-item:hover {
   background-color: #74e022;
+}
+.field-set {
+  margin-left: 40px;
+  width: 175px;
+}
+.field-set p {
+  margin: 5px;
+}
+.date-field,
+.servings-field {
+  font-family: 'Josefin Slab', Georgia, serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #468913;
+  border: none;
+  border-bottom: 1px solid #595959;
+}
+.date-field:focus,
+.servings-field:focus {
+  outline: none;
+}
+.date-field {
+  width: 150px;
+  text-align: center;
+}
+.servings-field {
+  width: 50px;
+  text-align: center;
+}
+.save-button {
+  border: 1px solid #468913;
+  float: right;
+  margin-top: 0;
+  font-size: 1.05em;
 }
