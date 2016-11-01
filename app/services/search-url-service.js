@@ -9,6 +9,7 @@
     function SearchUrlService(config) {
         var service = {
             generic: genericURLBuilder,
+            //TODO refactor to get rid of lodash. I don't use it anywere else.
             searchURL: _.partial(genericURLBuilder, 'search'),
             itemURL: _.partial(genericURLBuilder, 'item')
         };
