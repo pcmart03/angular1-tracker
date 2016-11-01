@@ -2,3 +2,4 @@
 
 This is a breakable toy for practicing with Angular 1.5. It queries the nutrionix API, and saves food to a Firebase database
 
+TODO: Include sample config service file.
