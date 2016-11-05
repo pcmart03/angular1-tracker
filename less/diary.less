@@ -13,7 +13,7 @@
     width: 80%;
     margin: 20px auto;
     
-    @media only screen and (max-device-width: @phone){
+    @media only screen and (max-width: @phone){
         width: 90%;
     }
 }
@@ -34,7 +34,7 @@
     flex-wrap: wrap;
     width: 80%;
     margin: 20px auto;
-    @media only screen and (max-device-width: @phone) {
+    @media only screen and (max-width: @phone) {
         width: 90%;
         margin: 10px auto;
         display: block;
@@ -57,8 +57,8 @@
         width: 30%;
     }
     
-    @media only screen and (max-device-width: @phone) {
-        width: 100%;
+    @media all and (max-width: @phone) {
+        width: 100% !important;
         border-bottom: none;
         text-align: left;
         padding: 0 10px 0 10px;
@@ -67,7 +67,7 @@
 
 .first-column {
     text-align: left;
-    @media only screen and (max-device-width: @phone) {
+    @media all and (max-width: @phone) {
         margin-top: 1em;
         padding: 8px;
         background-color: @primary-light;
@@ -75,7 +75,7 @@
 }
 
 .calories-cell {
-    @media only screen and (max-device-width: @phone) {
+    @media only screen and (max-width: @phone) {
         border-bottom: 1px solid @text-primary;
         padding-bottom: 5px;
     }
@@ -87,7 +87,13 @@
     border-bottom: 1px solid @primary-light;
     text-align: center;
     
-    @media only screen and (max-device-width: @phone) {
+    @media all and (max-width: @phone) {
         display: none;
     } 
+}
+
+.small-label {
+    @media all and (min-width: @phone) {
+        display: none;
+    }
 }

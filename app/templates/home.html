@@ -14,11 +14,19 @@
     <div class="flex-table-cell ft-header">Calories</div>
 
     <div ng-repeat-start="food in foods.foodsEaten | orderBy: 'date':true | filter: {date: foods.viewDate}" class="first-column">{{ food.item_name }}</div>
-    <div class="flex-table-cell">{{ food.brand_name}}</div>
     <div class="flex-table-cell">
-        <label ng-hide="food.editMode" ng-click="foods.editServings(food)">{{ food.servings }}</label>
+        <span class="small-label">Brand: </span>{{ food.brand_name}}
+    </div>
+    <div class="flex-table-cell">
+        <label ng-hide="food.editMode" ng-click="foods.editServings(food)">
+        <span class="small-label">Servings: </span>{{ food.servings }}
+        </label>
         <input type="text" ng-show="food.editMode" ng-model="food.servings" ng-keyup="foods.updateFood(food, $event)" focus-show></div>
     <div ng-repeat-end class="flex-table-cell calories-cell">
-        <span>{{ food.total_calories | number: 0 }} <a href="#" class="button button-delete f-right" ng-click="foods.deleteFood(food)"><i class="fa fa-trash"></i></a></span>
+        <span><span class="small-label">Calories: </span>{{ food.total_calories | number: 0 }} <a href="#" class="button button-delete f-right" ng-click="foods.deleteFood(food)"><i class="fa fa-trash"></i></a></span>
     </div>
+    <div class="first-column">
+        <span>Total Calories:<span>
+    </div>
+    <div class="flex-table-cell text-left"><strong>{{foods.calorieTotal | number:0 }}</strong></div>
 </div>

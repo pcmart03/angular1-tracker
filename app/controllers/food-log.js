@@ -29,6 +29,7 @@
         
         function deleteFood(food){
             FirebaseData.deleteRecord(food);
+            vm.sumCalories();
         }
         
         function toggleMode(item) {

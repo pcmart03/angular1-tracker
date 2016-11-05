@@ -90,7 +90,7 @@ header .brand a {
   width: 80%;
   margin: 20px auto;
 }
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 600px) {
   .diary-controls {
     width: 90%;
   }
@@ -118,7 +118,7 @@ header .brand a {
   width: 80%;
   margin: 20px auto;
 }
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 600px) {
   .flex-table {
     width: 90%;
     margin: 10px auto;
@@ -150,10 +150,10 @@ header .brand a {
 .first-column input:focus {
   outline: none;
 }
-@media only screen and (max-device-width: 600px) {
+@media all and (max-width: 600px) {
   .flex-table-cell,
   .first-column {
-    width: 100%;
+    width: 100% !important;
     border-bottom: none;
     text-align: left;
     padding: 0 10px 0 10px;
@@ -162,14 +162,14 @@ header .brand a {
 .first-column {
   text-align: left;
 }
-@media only screen and (max-device-width: 600px) {
+@media all and (max-width: 600px) {
   .first-column {
     margin-top: 1em;
     padding: 8px;
     background-color: #74e022;
   }
 }
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 600px) {
   .calories-cell {
     border-bottom: 1px solid #595959;
     padding-bottom: 5px;
@@ -181,8 +181,13 @@ header .brand a {
   border-bottom: 1px solid #74e022;
   text-align: center;
 }
-@media only screen and (max-device-width: 600px) {
+@media all and (max-width: 600px) {
   .ft-header {
+    display: none;
+  }
+}
+@media all and (min-width: 600px) {
+  .small-label {
     display: none;
   }
 }

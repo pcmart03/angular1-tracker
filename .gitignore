@@ -1,5 +1,5 @@
 node_modules
-bower_components
 .vagrant
-
+.vscode
 app/services/constants.js
+js/app.js
