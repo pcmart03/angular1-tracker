@@ -2,6 +2,12 @@
     text-align: right;
 }
 
+.calories-cell {
+    @media only screen and (max-width: @phone) {
+        border-bottom: 1px solid @text-primary;
+        padding-bottom: 5px;
+    }
+}
 
 .control-box {
     flex: 1 1 auto;
@@ -29,7 +35,7 @@
     }
 }
 
-.flex-table {
+.flex-table, .total-row {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -74,13 +80,6 @@
     } 
 }
 
-.calories-cell {
-    @media only screen and (max-width: @phone) {
-        border-bottom: 1px solid @text-primary;
-        padding-bottom: 5px;
-    }
-}
-
 .ft-header {
     font-family: @serif;
     font-weight: bold;
@@ -96,4 +95,8 @@
     @media all and (min-width: @phone) {
         display: none;
     }
+}
+
+.total-row {
+    justify-content: flex-end;
 }

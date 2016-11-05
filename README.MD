@@ -12,5 +12,3 @@ Run `gulp build`.
 
 I generally use browser-sync as a local server.
 
-
-

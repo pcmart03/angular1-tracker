@@ -81,6 +81,12 @@ header .brand a {
 .add-food-div {
   text-align: right;
 }
+@media only screen and (max-width: 600px) {
+  .calories-cell {
+    border-bottom: 1px solid #595959;
+    padding-bottom: 5px;
+  }
+}
 .control-box {
   flex: 1 1 auto;
 }
@@ -112,14 +118,16 @@ header .brand a {
   color: #74e022;
   cursor: pointer;
 }
-.flex-table {
+.flex-table,
+.total-row {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   margin: 20px auto;
 }
 @media only screen and (max-width: 600px) {
-  .flex-table {
+  .flex-table,
+  .total-row {
     width: 90%;
     margin: 10px auto;
     display: block;
@@ -169,12 +177,6 @@ header .brand a {
     background-color: #74e022;
   }
 }
-@media only screen and (max-width: 600px) {
-  .calories-cell {
-    border-bottom: 1px solid #595959;
-    padding-bottom: 5px;
-  }
-}
 .ft-header {
   font-family: 'Josefin Slab', Georgia, serif;
   font-weight: bold;
@@ -190,6 +192,9 @@ header .brand a {
   .small-label {
     display: none;
   }
+}
+.total-row {
+  justify-content: flex-end;
 }
 .ui-widget {
   font-family: 'Oswald', Verdana, sans-serif;
